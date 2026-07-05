@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MET × Tigran · Partnership Proposal</title>
+<meta name="description" content="AI and automation partnership for MET Agency: the newest AI in your team's hands, and marketing systems your team owns and improves." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Gantari:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#651027;               /* MET declared brand --mcolor (exact) */
+    --wine-deep:#45060e;
+    --wine-on-dark:#e8617f;        /* legible wine on near-black (5.8:1) */
+    --ink:#161011;
+    --body:#453c3e;
+    --muted:#615858;
+    --surface:#ffffff;
+    --surface-2:#f8f8f8;
+    --surface-3:#ededed;
+    --line:#e7e0dc;
+    --line-strong:#d6cbc6;
+    --wine-tint:#f7ecef;
+    --dark-body:#cabec0;
+    --dark-muted:#c3b8ba;
+    --maxw:1220px;
+    --gutter:clamp(20px,5vw,72px);
+    --ease:cubic-bezier(.23,1,.32,1);
+    --fs-display:clamp(2.4rem,6.4vw,5.6rem);
+    --fs-h2:clamp(1.8rem,4.2vw,3.4rem);
+    --fs-h3:clamp(1.2rem,2vw,1.6rem);
+    --fs-lead:clamp(1.1rem,1.6vw,1.42rem);
+    --fs-body:clamp(1rem,1.1vw,1.1rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Gantari",system-ui,sans-serif;color:var(--body);background:var(--surface);
+    font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  body.locked{overflow:hidden;height:100vh}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.03;text-wrap:balance}
+  p{text-wrap:pretty}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--wine);color:#fff}
+  :focus-visible{outline:none;box-shadow:0 0 0 3px var(--wine-tint),0 0 0 5px var(--wine)}
+  .display{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:.005em}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+  .eyebrow{font-family:"Gantari";font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);display:inline-flex;align-items:center;gap:.6em}
+  .eyebrow::before{content:"";width:24px;height:2px;background:currentColor}
+
+  /* ===== password gate ===== */
+  #gate{position:fixed;inset:0;z-index:1000;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;padding:24px}
+  #gate .box{width:100%;max-width:380px;text-align:left}
+  #gate .mk{font-family:"Anton";font-size:2rem;letter-spacing:.02em}
+  #gate .mk .x{color:var(--wine-on-dark);font-family:"Gantari";font-weight:300}
+  #gate .sub{color:var(--dark-muted);font-size:.9rem;margin:6px 0 28px}
+  #gate label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-muted);margin:14px 0 6px}
+  #gate input{width:100%;padding:.8em 1em;border:1px solid #3a2b2d;background:#1e1516;color:#fff;border-radius:8px;font-size:1rem;font-family:inherit}
+  #gate input:focus{outline:none;border-color:var(--wine-on-dark)}
+  #gate button{margin-top:22px;width:100%;padding:.9em;background:var(--wine-on-dark);color:var(--ink);border:none;border-radius:8px;font-weight:800;font-size:1rem;cursor:pointer;transition:transform .15s var(--ease),filter .15s var(--ease)}
+  #gate button:hover{filter:brightness(1.06)}#gate button:active{transform:scale(.98)}
+  #gate .err{display:none;color:var(--wine-on-dark);font-size:.86rem;margin-top:14px}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--wine);z-index:100}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gutter);transition:background .4s var(--ease),box-shadow .4s var(--ease)}
+  header.nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  .brand{font-family:"Anton";font-size:1.3rem;color:var(--ink);letter-spacing:.02em;display:flex;align-items:center;gap:.5rem}
+  .brand .x{color:var(--wine);font-family:"Gantari";font-weight:300;font-size:1.05rem}
+  .nav-label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.03em}
+  @media(max-width:560px){.nav-label{display:none}}
+
+  /* ===== hero ===== */
+  .hero{position:relative;min-height:96svh;display:flex;flex-direction:column;justify-content:center;padding-block:120px 60px;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 90% 6%,var(--wine-tint) 0%,transparent 44%);z-index:-1}
+  .hero h1{font-size:var(--fs-display);color:var(--ink);letter-spacing:-.01em}
+  .hero h1 .accent{color:var(--wine)}
+  .hero .line{display:block;overflow:hidden}
+  .hero .line span{display:block;transition:transform .9s var(--ease)}
+  .anim .hero .line span{transform:translateY(106%)}
+  .anim .hero .line:nth-child(2) span{transition-delay:.07s}
+  .anim .hero .line:nth-child(3) span{transition-delay:.14s}
+  .revealed .hero .line span{transform:translateY(0)}
+  .hero-sub{max-width:60ch;margin-top:clamp(24px,4vh,38px);font-size:var(--fs-lead);color:var(--body)}
+  .anim .hero-sub{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) .45s,transform .8s var(--ease) .45s}
+  .revealed .hero-sub{opacity:1;transform:none}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:clamp(28px,5vh,46px)}
+  .anim .hero-meta{opacity:0;transition:opacity .8s var(--ease) .65s}
+  .revealed .hero-meta{opacity:1}
+  .hero-meta span{font-size:.85rem;font-weight:600;color:var(--muted)}
+  .hero-meta b{color:var(--ink)}
+  .hero-meta .pill{color:var(--wine);border:1.5px solid var(--line-strong);border-radius:8px;padding:.35em .8em}
+
+  section{padding-block:clamp(72px,11vh,150px)}
+  .sec-head{max-width:60ch;margin-bottom:clamp(38px,6vh,68px)}
+  .sec-head h2{font-size:var(--fs-h2);margin-top:clamp(14px,2vh,24px);letter-spacing:-.01em}
+  .sec-head .lead{margin-top:clamp(16px,2.4vh,26px)}
+  .lead{font-size:var(--fs-lead);color:var(--body);max-width:62ch}
+
+  .reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .anim .reveal{opacity:0;transform:translateY(26px)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== track record: stat tiles ===== */
+  .record{background:var(--ink);color:#fff}
+  .record h2{color:#fff}
+  .record .eyebrow{color:var(--wine-on-dark)}
+  .record .lead{color:var(--dark-body)}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#2a2020;border:1px solid #2a2020;border-radius:16px;overflow:hidden;margin-top:8px}
+  @media(min-width:680px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:#1b1314;padding:clamp(20px,2.6vw,32px)}
+  .stat .v{font-family:"Anton";font-size:clamp(2.6rem,5vw,4rem);color:var(--wine-on-dark);line-height:.9}
+  .stat .l{color:var(--dark-body);font-size:.9rem;margin-top:10px;font-weight:500}
+  .receipts{display:grid;gap:14px;margin-top:44px;grid-template-columns:1fr}
+  @media(min-width:720px){.receipts{grid-template-columns:1fr 1fr}}
+  .receipt{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-top:1px solid #2a2020}
+  .receipt b{color:#fff;font-weight:700}
+  .receipt span{color:var(--dark-body);font-size:.96rem}
+  .receipt .rk{color:var(--wine-on-dark);font-family:"Anton";font-size:.9rem;flex:none;width:2ch}
+  .record .frame{margin-top:34px;color:var(--dark-muted);font-size:.92rem}
+
+  /* ===== creatives gallery ===== */
+  .gallery-grid{columns:2;column-gap:16px}
+  @media(min-width:760px){.gallery-grid{columns:3}}
+  @media(min-width:1120px){.gallery-grid{columns:4}}
+  .shot{break-inside:avoid;margin-bottom:16px;position:relative;border-radius:12px;overflow:hidden;background:var(--surface-3);aspect-ratio:3/4}
+  .shot:nth-child(2){aspect-ratio:4/5}.shot:nth-child(3){aspect-ratio:1/1}
+  .shot:nth-child(5){aspect-ratio:1/1}.shot:nth-child(6){aspect-ratio:4/5}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+  .shot::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;padding:16px 14px 12px;font-size:.76rem;font-weight:600;color:#fff;background:linear-gradient(0deg,rgba(20,10,12,.82),transparent);opacity:0;transition:opacity .4s var(--ease)}
+  .shot:hover img{transform:scale(1.05)}.shot:hover::after{opacity:1}
+  .gallery-note{margin-top:32px;font-size:.95rem;color:var(--muted);max-width:64ch}
+  .gallery-note b{color:var(--wine)}
+
+  /* ===== kick off ===== */
+  .kick{background:var(--surface-2)}
+  .kick-grid{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:820px){.kick-grid{grid-template-columns:repeat(3,1fr)}}
+  .kick-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(24px,3vw,34px)}
+  .kick-card .kn{font-family:"Anton";color:var(--wine);font-size:1rem;letter-spacing:.04em}
+  .kick-card h3{font-size:1.25rem;margin:10px 0 10px}
+  .kick-card p{font-size:.96rem;color:var(--body)}
+  .kick-price{margin-top:28px;font-family:"Anton";color:var(--ink);font-size:clamp(1.6rem,3vw,2.2rem)}
+  .kick-price small{font-family:"Gantari";font-weight:600;font-size:.8rem;color:var(--muted);letter-spacing:.02em;margin-left:8px}
+
+  /* ===== milestones ===== */
+  .miles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  @media(min-width:720px){.miles{grid-template-columns:1fr 1fr}}
+  @media(min-width:1080px){.miles{grid-template-columns:repeat(3,1fr)}}
+  .mile{background:var(--surface);padding:clamp(24px,2.6vw,34px);transition:background .3s var(--ease)}
+  .mile:hover{background:var(--surface-2)}
+  .mile .mn{font-family:"Anton";font-size:1.6rem;color:var(--line-strong);transition:color .3s var(--ease)}
+  .mile:hover .mn{color:var(--wine)}
+  .mile h3{font-size:1.18rem;margin:8px 0 8px}
+  .mile p{font-size:.94rem;color:var(--body)}
+  .mile .out{margin-top:12px;font-size:.86rem;color:var(--wine);font-weight:600}
+  .miles-more{margin-top:26px;font-size:.98rem;color:var(--body);max-width:66ch}
+  .miles-more b{color:var(--wine)}
+
+  /* ===== process ===== */
+  .steps{display:grid;gap:16px;grid-template-columns:1fr;counter-reset:s}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(5,1fr)}}
+  .step{position:relative;padding-top:22px;border-top:2px solid var(--line-strong)}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-2px;left:0;width:auto;font-family:"Anton";font-size:.9rem;color:var(--wine);background:var(--surface);padding-right:10px;transform:translateY(-52%)}
+  .step h4{font-size:1rem;margin-bottom:6px}
+  .step p{font-size:.88rem;color:var(--body)}
+
+  /* ===== retainer / tools / touch (feature bands) ===== */
+  .band-2{display:grid;gap:clamp(28px,4vw,60px);grid-template-columns:1fr}
+  @media(min-width:900px){.band-2{grid-template-columns:1fr 1fr}}
+  .listy{list-style:none;display:grid;gap:12px;margin-top:8px}
+  .listy li{position:relative;padding-left:22px;font-size:1rem;color:var(--body)}
+  .listy li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--wine);border-radius:2px;transform:rotate(45deg)}
+  .listy li b{color:var(--ink)}
+  .retainer{background:var(--ink);color:#fff}
+  .retainer h2{color:#fff}.retainer .eyebrow{color:var(--wine-on-dark)}.retainer .lead{color:var(--dark-body)}
+  .retainer .listy li{color:var(--dark-body)}.retainer .listy li b{color:#fff}.retainer .listy li::before{background:var(--wine-on-dark)}
+  .retainer .price{font-family:"Anton";color:var(--wine-on-dark);font-size:clamp(2.4rem,6vw,4rem);line-height:.9}
+  .retainer .price small{display:block;font-family:"Gantari";font-weight:600;font-size:.82rem;color:var(--dark-muted);margin-top:8px}
+
+  /* ===== investment ===== */
+  .invest .rows{border-top:1px solid var(--line);margin-top:8px}
+  .invest .r{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;padding:24px 0;border-bottom:1px solid var(--line)}
+  .invest .r .rt{font-family:"Gantari";font-weight:600;color:var(--ink);font-size:clamp(1.1rem,2vw,1.4rem)}
+  .invest .r .rd{color:var(--body);font-size:.92rem;margin-top:4px;max-width:52ch}
+  .invest .r .rp{font-family:"Anton";color:var(--wine);font-size:clamp(1.4rem,2.6vw,2rem);white-space:nowrap;text-align:right}
+
+  /* ===== contact ===== */
+  .contact h2{font-size:clamp(2rem,6vw,4.6rem)}
+  .contact .lead{margin-top:18px}
+  .contact .card{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:1.02rem}
+  .contact .card b{color:var(--ink)}
+  .contact .card a{color:var(--wine);text-decoration:none}
+  .contact .fine{margin-top:26px;font-size:.88rem;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding-block:36px;color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer .brand{font-size:1rem}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .anim .reveal,.anim .hero .line span,.anim .hero-sub,.anim .hero-meta{opacity:1!important;transform:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #gate,.progress,header.nav{display:none!important}
+    body.locked{overflow:visible;height:auto}
+    body{font-size:11pt;line-height:1.5}
+    section{padding-block:28px!important}
+    .hero{min-height:auto!important;padding-block:8px 22px!important}
+    .reveal{opacity:1!important;transform:none!important}
+    .hero .line span,.hero-sub,.hero-meta{transform:none!important;opacity:1!important}
+    .record,.retainer{background:#fff!important;color:var(--ink)!important}
+    .record h2,.retainer h2{color:var(--ink)!important}
+    .record .lead,.retainer .lead,.receipt span,.retainer .listy li{color:var(--body)!important}
+    .record .eyebrow,.retainer .eyebrow,.stat .v,.receipt .rk,.retainer .price,.retainer .price small{color:var(--wine)!important}
+    .stats,.stat,.tiers{background:#fff!important;border-color:var(--line)!important}
+    .stat .l,.record .frame{color:var(--body)!important}
+    .receipt b,.retainer .listy li b{color:var(--ink)!important}
+    .stat,.mile,.kick-card,.shot,.step,.invest .r{break-inside:avoid}
+    .gallery-grid{columns:3}
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <form class="box" id="gateForm" autocomplete="off">
+    <div class="mk">MET <span class="x">×</span> Tigran</div>
+    <div class="sub">Private proposal. Please enter your access details.</div>
+    <label for="gu">Username</label>
+    <input id="gu" type="text" autocapitalize="off" spellcheck="false" />
+    <label for="gp">Password</label>
+    <input id="gp" type="password" />
+    <button type="submit">Enter</button>
+    <div class="err" id="gerr">Incorrect username or password.</div>
+  </form>
+</div>
+
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav">
+  <div class="brand">MET <span class="x">×</span> Tigran</div>
+  <span class="nav-label">Partnership Proposal · Yerevan · 2026</span>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap" id="top">
+  <h1 class="display">
+    <span class="line"><span>AI that amplifies</span></span>
+    <span class="line"><span>your <span class="accent">craft.</span></span></span>
+    <span class="line"><span>Owned by your team.</span></span>
+  </h1>
+  <p class="hero-sub">The newest AI, in your team's hands, with hands-on practice. We build marketing systems your team runs and improves, not black boxes. The result: less manual work, sharper decisions, and more output, on your brand.</p>
+  <div class="hero-meta">
+    <span class="pill">MET Agency × Tigran</span>
+    <span><b>Kick Off</b> · Milestones · Retainer</span>
+    <span><b>You own</b> everything we build</span>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="record">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Track record</span>
+      <h2 class="display reveal">Built and shipped, not slideware.</h2>
+      <p class="lead reveal">Systems already running in marketing, and the outcomes they drove.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="v"><span data-count="100" data-suffix="+">100+</span></div><div class="l">AI agents & automations built</div></div>
+      <div class="stat"><div class="v"><span data-count="5">5</span></div><div class="l">platforms auto-reported</div></div>
+      <div class="stat"><div class="v"><span data-count="10" data-suffix="+">10+</span></div><div class="l">short-form videos a day</div></div>
+      <div class="stat"><div class="v"><span data-count="5" data-suffix="/wk">5/wk</span></div><div class="l">lifecycle campaigns auto-launched</div></div>
+      <div class="stat"><div class="v"><span data-count="15" data-suffix="+">15+</span></div><div class="l">trend insights a day</div></div>
+      <div class="stat"><div class="v"><span data-count="93" data-suffix="%">93%</span></div><div class="l">knowledge-base accuracy</div></div>
+      <div class="stat"><div class="v"><span data-count="20" data-suffix="+">20+</span></div><div class="l">product managers mentored</div></div>
+      <div class="stat"><div class="v"><span data-count="3" data-suffix="lang">3 lang</span></div><div class="l">Armenian, Russian, English</div></div>
+    </div>
+    <div class="receipts reveal">
+      <div class="receipt"><span class="rk">01</span><span><b>Leadership visibility.</b> Weekly performance + competitor summaries auto-delivered to the CEO and marketing leaders. Better decisions, more posts shipped.</span></div>
+      <div class="receipt"><span class="rk">02</span><span><b>Lifecycle on autopilot.</b> A multi-agent CRM system that auto-launches about 5 push and email campaigns a week.</span></div>
+      <div class="receipt"><span class="rk">03</span><span><b>Creative at volume.</b> 10+ short-form videos generated per day, from trend to finished cut.</span></div>
+      <div class="receipt"><span class="rk">04</span><span><b>Always-on trends.</b> 15+ trend insights a day feeding the content engine.</span></div>
+      <div class="receipt"><span class="rk">05</span><span><b>Instant knowledge.</b> A retrieval knowledge base answering across a large library at 93% top-3 accuracy.</span></div>
+      <div class="receipt"><span class="rk">06</span><span><b>Taught, not just built.</b> AI Product Management at the Armenian Code Academy; vibe-coding mentoring for 20+ PMs over 6 weeks; AI and leadership sessions for 15+ at a bank.</span></div>
+    </div>
+    <p class="frame reveal">Built at a 150M-user, billion-dollar creative company. Now offered to MET as a hands-on partnership.</p>
+  </div>
+</section>
+
+<!-- CREATIVES -->
+<section class="wrap" id="work">
+  <div class="sec-head">
+    <span class="eyebrow reveal">Creative, at volume</span>
+    <h2 class="display reveal">On-brand assets in minutes. Your team directs the finish.</h2>
+    <p class="lead reveal">Seven social creatives generated for this proposal, across your verticals, minutes each. The same engines produce first drafts your art directors crop, retouch, and set type on.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="shot" data-cap="Quiet-luxury jewelry"><img src="assets/creatives/01-jewelry-editorial.jpg" alt="Gold rings on cream silk, editorial jewelry" loading="lazy"></div>
+    <div class="shot" data-cap="Street-food energy"><img src="assets/creatives/03-food-burger.jpg" alt="Gourmet burger with sauce, street-food photography" loading="lazy"></div>
+    <div class="shot" data-cap="City lifestyle"><img src="assets/creatives/06-lifestyle-urban.jpg" alt="Woman walking an evening city street" loading="lazy"></div>
+    <div class="shot" data-cap="Jewelry on wine velvet"><img src="assets/creatives/02-jewelry-dramatic.jpg" alt="Gold necklace on burgundy velvet, dramatic jewelry" loading="lazy"></div>
+    <div class="shot" data-cap="Event, nightlife"><img src="assets/creatives/05-event-nightlife.jpg" alt="Concert crowd under red stage lighting" loading="lazy"></div>
+    <div class="shot" data-cap="Golden-hour dining"><img src="assets/creatives/04-food-terrace.jpg" alt="Fine dining plate on a candlelit terrace" loading="lazy"></div>
+    <div class="shot" data-cap="Cinematic sportswear"><img src="assets/creatives/07-sportswear.jpg" alt="White sneakers on wet pavement, cinematic sportswear" loading="lazy"></div>
+  </div>
+  <p class="gallery-note reveal"><b>Note:</b> raw AI first-drafts, not final client work. In your studio the same engines produce the on-brand starting point your team finishes. The craft decision stays human.</p>
+</section>
+
+<!-- KICK OFF -->
+<section class="kick">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Phase one</span>
+      <h2 class="display reveal">Kick Off: set the team up, and find the highest-value work.</h2>
+    </div>
+    <div class="kick-grid">
+      <div class="kick-card reveal"><span class="kn">01</span><h3>Workspace setup</h3><p>Claude Code (1-2 builder seats to start), Visual Studio, and a MET GitHub. The environment your team builds in.</p></div>
+      <div class="kick-card reveal"><span class="kn">02</span><h3>Hands-on training</h3><p>The whole team, on your real work: agentic AI, AI for marketing reporting, AI for graphics and video, and building.</p></div>
+      <div class="kick-card reveal"><span class="kn">03</span><h3>Audit</h3><p>Your needs, brand resources, clients, workflows and toolstack, which locks the milestone roadmap and the first thing to ship.</p></div>
+    </div>
+    <div class="kick-price reveal">900,000 ֏<small>Kick Off</small></div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="wrap" id="build">
+  <div class="sec-head">
+    <span class="eyebrow reveal">What we build</span>
+    <h2 class="display reveal">Systems your team owns and improves.</h2>
+    <p class="lead reveal">Priority and scope set with you in the audit. Each is described by the outcome it delivers, and your team can modify every one.</p>
+  </div>
+  <div class="miles reveal">
+    <div class="mile"><div class="mn">01</div><h3>Marketing Intelligence Dashboard</h3><p>All performance in one place, organic, paid and collaboration, per client and per channel.</p><div class="out">Kills manual reporting. Sharper decisions. Leadership visibility.</div></div>
+    <div class="mile"><div class="mn">02</div><h3>Copywriter, Briefer & Brand agent</h3><p>Client input into structured briefs and on-tone copy, kept on-brand from your guidelines.</p><div class="out">Faster briefs. On-brand copy. Automatic brand QA.</div></div>
+    <div class="mile"><div class="mn">03</div><h3>Photo, Video & Motion creator</h3><p>On-brand stills, short-form video and motion, from trend to finished cut.</p><div class="out">More creative per week. Faster launches. You keep control.</div></div>
+    <div class="mile"><div class="mn">04</div><h3>Trend agent</h3><p>Detects and scores trends, then writes ready-to-shoot briefs.</p><div class="out">Never miss a trend. React in hours, not days.</div></div>
+    <div class="mile"><div class="mn">05</div><h3>Knowledge base</h3><p>Your principles, practices and client info, searchable by the whole team.</p><div class="out">Instant answers. Faster onboarding. Nothing lost.</div></div>
+    <div class="mile"><div class="mn">06</div><h3>Client proposal & outreach builder</h3><p>AI-built client proposal pages like this one, plus outreach.</p><div class="out">Win more pitches. Respond faster. Look sharper.</div></div>
+  </div>
+  <p class="miles-more reveal"><b>And 100+ more,</b> across marketing and internal processes: Meta Ads copilot, Messenger and Instagram chatbots with lead qualification, scheduling and publishing, competitor radar, a client report portal, and internal operations automations.</p>
+</section>
+
+<!-- PROCESS -->
+<section class="kick">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="display reveal">One milestone at a time, locked before the next.</h2>
+      <p class="lead reveal">You build the first version with me, then own it.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><h4>Scope</h4><p>Define the outcome and deliverable.</p></div>
+      <div class="step"><h4>Build</h4><p>A working version in about a week.</p></div>
+      <div class="step"><h4>Iterate</h4><p>3 to 4 rounds of your feedback.</p></div>
+      <div class="step"><h4>Lock</h4><p>Runs autonomously, your team owns it.</p></div>
+      <div class="step"><h4>Next</h4><p>On to the next milestone.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAINER -->
+<section class="retainer">
+  <div class="wrap band-2">
+    <div>
+      <span class="eyebrow reveal">Ongoing</span>
+      <h2 class="display reveal" style="margin-top:16px">A partner on call.</h2>
+      <ul class="listy reveal" style="margin-top:24px">
+        <li><b>Weekly AI news and Q&A</b> every Friday: strategy plus implementation time.</li>
+        <li><b>Weekly maintenance</b> so your agents and products keep running.</li>
+        <li><b>New milestones</b> added as you grow.</li>
+      </ul>
+    </div>
+    <div class="reveal" style="align-self:center">
+      <div class="price">400,000 ֏<small>per month</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS + TOUCHPOINTS -->
+<section class="wrap" id="stack">
+  <div class="band-2">
+    <div>
+      <h2 class="display reveal" style="font-size:var(--fs-h3)">You own the tools. No lock-in.</h2>
+      <ul class="listy reveal" style="margin-top:18px">
+        <li><b>Claude Code</b> (1-2 seats) + <b>Claude & Gemini APIs</b></li>
+        <li><b>Meta</b> for client performance data</li>
+        <li><b>Picsart / Higsfield</b> for images and video</li>
+        <li><b>GitHub</b>, plus optional scraping and trend feeds</li>
+        <li>Small monthly running cost, all in MET's name</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="display reveal" style="font-size:var(--fs-h3)">Hybrid, with clear owners.</h2>
+      <ul class="listy reveal" style="margin-top:18px">
+        <li><b>In-person kickoff</b> sessions for everyone</li>
+        <li><b>Async milestone building</b> with named owners on your side</li>
+        <li><b>Slack and Telegram</b> support, about 24h response</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="wrap invest" id="invest">
+  <div class="sec-head">
+    <span class="eyebrow reveal">Investment</span>
+    <h2 class="display reveal">Simple and staged.</h2>
+    <p class="lead reveal">Priced for the local market, in Armenian dram.</p>
+  </div>
+  <div class="rows reveal">
+    <div class="r"><div><div class="rt">Kick Off</div><div class="rd">Workspace setup, team training, and the audit.</div></div><div class="rp">900,000 ֏</div></div>
+    <div class="r"><div><div class="rt">Milestones</div><div class="rd">Scoped and fixed-priced together in the Kick Off, one at a time.</div></div><div class="rp">per scope</div></div>
+    <div class="r"><div><div class="rt">Retainer</div><div class="rd">Weekly AI news, Q&A, and maintenance.</div></div><div class="rp">400,000 ֏/mo</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="wrap contact" id="contact">
+  <h2 class="display reveal">Let's build it <span style="color:var(--wine)">together.</span></h2>
+  <p class="lead reveal">A short call to confirm the first milestone and a live demo of the Trend Replicator on one of your clients.</p>
+  <div class="card reveal">
+    <span><b>Tigran Sargsyan</b></span>
+    <span><a href="mailto:i.am.tigran.sargsyan@gmail.com">i.am.tigran.sargsyan@gmail.com</a></span>
+    <span>Telegram · <b>+374 43 090290</b></span>
+  </div>
+  <p class="fine reveal">Prepared for MET Agency, Yerevan · 2026.</p>
+</section>
+
+<footer class="wrap">
+  <div class="brand">MET <span class="x">×</span> Tigran</div>
+  <span>Partnership proposal · <span id="yr"></span></span>
+</footer>
+
+<script>
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body, yr = document.getElementById('yr');
+  if(yr) yr.textContent = new Date().getFullYear();
+
+  function init(){
+    if(!rm) body.classList.add('anim');
+    requestAnimationFrame(function(){ body.classList.add('revealed'); });
+
+    var nav = document.getElementById('nav'), prog = document.getElementById('progress');
+    function onScroll(){
+      var y = window.scrollY || document.documentElement.scrollTop;
+      nav.classList.toggle('scrolled', y > 40);
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.transform = 'scaleX(' + (h>0 ? Math.min(y/h,1) : 0) + ')';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+    var revEls = [].slice.call(document.querySelectorAll('.reveal'));
+    if(rm){ revEls.forEach(function(el){el.classList.add('in');}); }
+    else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+      revEls.forEach(function(el){
+        var sibs = el.parentElement ? [].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('reveal');}) : [];
+        var idx = sibs.indexOf(el); if(idx>0) el.style.transitionDelay = Math.min(idx*0.05,0.3)+'s';
+        io.observe(el);
+      });
+      setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 2600);
+    }
+
+    if(!rm){
+      var fmt = function(v){ return Math.round(v).toLocaleString('en-US'); };
+      var run = function(el){
+        var t = parseFloat(el.getAttribute('data-count')), sfx = el.getAttribute('data-suffix')||'';
+        var dur=1300, start=null; el.textContent='0'+sfx;
+        function tick(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1), e=1-Math.pow(1-p,3);
+          el.textContent=fmt(t*e)+sfx; if(p<1)requestAnimationFrame(tick); else el.textContent=fmt(t)+sfx; }
+        requestAnimationFrame(tick);
+      };
+      var cio = new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target);} }); },{threshold:0.5});
+      [].slice.call(document.querySelectorAll('[data-count]')).forEach(function(el){ cio.observe(el); });
+    }
+  }
+
+  // password gate
+  var gate = document.getElementById('gate');
+  var bypass = /[?&]open/.test(location.search) || sessionStorage.getItem('met_ok')==='1';
+  if(bypass){ if(gate) gate.remove(); body.classList.remove('locked'); init(); }
+  else {
+    document.getElementById('gateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var u=(document.getElementById('gu').value||'').trim().toLowerCase();
+      var p=document.getElementById('gp').value||'';
+      if(u==='met-agency' && p==='tigran'){
+        try{ sessionStorage.setItem('met_ok','1'); }catch(_){}
+        gate.remove(); body.classList.remove('locked'); init();
+      } else { document.getElementById('gerr').style.display='block'; }
+    });
+    document.getElementById('gu').focus();
+  }
+})();
+</script>
+</body>
+</html>
