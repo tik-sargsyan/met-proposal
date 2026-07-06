@@ -68,7 +68,16 @@
   header.nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
   .brand{font-family:"Anton";font-size:1.3rem;color:var(--ink);letter-spacing:.02em;display:flex;align-items:center;gap:.5rem}
   .brand .x{color:var(--wine);font-family:"Gantari";font-weight:300;font-size:1.05rem}
+  .nav-right{display:flex;align-items:center;gap:16px}
   .nav-label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.03em}
+  .nav-cta{font-weight:700;font-size:.88rem;color:#fff;background:var(--wine);padding:.5em 1.1em;border-radius:8px;transition:background .2s var(--ease),transform .2s var(--ease)}
+  .nav-cta:hover{background:var(--wine-deep);transform:translateY(-1px)}
+  .cta-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:32px}
+  .cta-btn{display:inline-flex;align-items:center;gap:.5em;font-weight:800;font-size:1.08rem;color:#fff;background:var(--wine);padding:.95em 2.1em;border-radius:10px;box-shadow:0 8px 26px rgba(101,16,39,.26);transition:background .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+  .cta-btn:hover{background:var(--wine-deep);transform:translateY(-2px);box-shadow:0 12px 30px rgba(101,16,39,.32)}
+  .cta-btn:active{transform:scale(.98)}
+  .cta-wrap .dl-link{color:var(--wine);font-weight:700;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--wine);padding-bottom:2px}
+  .cta-wrap .dl-link:hover{color:var(--wine-deep);border-color:var(--wine-deep)}
   @media(max-width:560px){.nav-label{display:none}}
 
   .hero{position:relative;min-height:96svh;display:flex;flex-direction:column;justify-content:center;padding-block:120px 60px;overflow:hidden}
@@ -240,7 +249,7 @@
 <div class="progress" id="progress"></div>
 <header class="nav" id="nav">
   <div class="brand">MET <span class="x">×</span> Tigran</div>
-  <span class="nav-label">Partnership Proposal · Yerevan · 2026</span>
+  <div class="nav-right"><span class="nav-label">Proposal · Yerevan · 2026</span><a class="nav-cta" href="#contact">Book a call</a></div>
 </header>
 
 <section class="hero wrap" id="top">
@@ -249,7 +258,7 @@
     <span class="line"><span>your <span class="accent">craft.</span></span></span>
     <span class="line"><span>Owned by your team.</span></span>
   </h1>
-  <p class="hero-sub">The newest AI in your team's hands, and marketing systems your team runs and improves, not black boxes. Less manual work, sharper decisions, more output.</p>
+  <p class="hero-sub">The newest AI in your team's hands, built to improve how your agency works. Marketing systems your team runs and improves, not black boxes. Less manual work, sharper decisions, more output.</p>
   <div class="hero-meta">
     <span class="pill">Built inside a 150M-user creative company</span>
     <span><b>Kick Off</b> · Milestones · Retainer</span>
@@ -306,14 +315,15 @@
 <section class="wrap phases-intro">
   <div class="sec-head">
     <span class="eyebrow reveal">How we work together</span>
-    <h2 class="display reveal">Three phases.</h2>
+    <h2 class="display reveal">A long-term journey, not a one-time training.</h2>
+    <p class="lead reveal">Structured learning, then hands-on implementation, then a consultant on call. In your words, and ours.</p>
   </div>
   <div class="roadmap reveal">
-    <div class="rm"><div class="rmn">1</div><h3>Kick Off</h3><p>Set up the team, train, and audit.</p></div>
+    <div class="rm"><div class="rmn">1</div><h3>Kick Off</h3><p>Structured learning, setup, and an audit.</p></div>
     <div class="rmarrow">→</div>
-    <div class="rm"><div class="rmn">2</div><h3>Milestones</h3><p>Build the systems you own.</p></div>
+    <div class="rm"><div class="rmn">2</div><h3>Milestones</h3><p>Hands-on implementation on your real work.</p></div>
     <div class="rmarrow">→</div>
-    <div class="rm"><div class="rmn">3</div><h3>Ongoing</h3><p>Retain and evolve.</p></div>
+    <div class="rm"><div class="rmn">3</div><h3>Ongoing</h3><p>Guidance, new-AI updates, support whenever needed.</p></div>
   </div>
 </section>
 
@@ -339,7 +349,7 @@
   <div class="sec-head">
     <span class="eyebrow reveal">Phase 2 · Milestones</span>
     <h2 class="display reveal">Systems your team owns and improves.</h2>
-    <p class="lead reveal">Priority and scope set with you in the audit. No one needs to code: you direct in plain language, the systems run on their own, and I'm on call for anything deeper.</p>
+    <p class="lead reveal">Built for exactly what you asked to cover: SMM (strategy, brand-voice copy, briefs to assets, scheduling, Meta reporting and ads, AI design, chatbots, lead flows) and marketing research. Priority set with you in the audit. No one needs to code.</p>
   </div>
   <div class="miles reveal">
     <div class="mile"><div class="mn">01</div><h3>Marketing Intelligence Dashboard</h3><p>A one-page weekly report to start, then all performance in one place, organic, paid and collaboration, per client and per channel.</p><div class="out">Kills manual reporting. Sharper decisions. Leadership visibility.</div></div>
@@ -349,7 +359,7 @@
     <div class="mile"><div class="mn">05</div><h3>Knowledge base</h3><p>Your principles, practices and client info, searchable by the whole team.</p><div class="out">Instant answers. Faster onboarding. Nothing lost.</div></div>
     <div class="mile"><div class="mn">06</div><h3>Client proposal & outreach builder</h3><p>AI-built client proposal pages like this one, plus outreach.</p><div class="out">Win more pitches. Respond faster. Look sharper.</div></div>
   </div>
-  <p class="miles-more reveal"><b>And a deeper backlog</b> across marketing and internal processes: Meta Ads copilot, Messenger and Instagram chatbots with lead qualification, scheduling and publishing, competitor radar, a client report portal, and internal operations automations.</p>
+  <p class="miles-more reveal"><b>Plus our recommendations beyond your list</b>, the tools, automations and best practices we'd add: Meta Ads copilot, Messenger and Instagram chatbots with lead qualification, scheduling and publishing, competitor radar, a client report portal, and internal operations automations.</p>
 </section>
 
 <!-- PROCESS -->
@@ -374,10 +384,10 @@
   <div class="wrap band-2">
     <div>
       <span class="eyebrow reveal">Phase 3 · Ongoing</span>
-      <h2 class="display reveal" style="margin-top:16px">A partner on call.</h2>
+      <h2 class="display reveal" style="margin-top:16px">Your ongoing consultant.</h2>
       <ul class="listy reveal" style="margin-top:24px">
-        <li><b>Weekly Friday session:</b> what's new in AI, live Q&A, and hands-on time with your team.</li>
-        <li><b>Upkeep</b> so every system you own keeps running as the tools underneath them change.</li>
+        <li><b>Guidance and updates on new AI developments,</b> a live session every Friday.</li>
+        <li><b>Support whenever you need it,</b> plus upkeep as the underlying tools change.</li>
         <li><b>New milestones on request,</b> scoped and priced as they come.</li>
       </ul>
     </div>
@@ -429,7 +439,10 @@
 <section class="wrap contact" id="contact">
   <h2 class="display reveal">Let's build it <span style="color:var(--wine)">together.</span></h2>
   <p class="lead reveal">A short call to green-light the Kick Off. This page is one example of what we build. I can also show on-brand creative in minutes and a one-page weekly Instagram report built from live data.</p>
-  <p class="dl reveal"><a href="assets/weekly-report-sample.pdf" target="_blank" rel="noopener">Download a sample weekly report (PDF)</a></p>
+  <div class="cta-wrap reveal">
+    <a class="cta-btn" href="mailto:i.am.tigran.sargsyan@gmail.com?subject=MET%20x%20Tigran%20-%20book%20a%20call">Book a call</a>
+    <a class="dl-link" href="assets/weekly-report-sample.pdf" target="_blank" rel="noopener">Download a sample weekly report (PDF)</a>
+  </div>
   <div class="card reveal">
     <span><b>Tigran Sargsyan</b></span>
     <span><a href="mailto:i.am.tigran.sargsyan@gmail.com">i.am.tigran.sargsyan@gmail.com</a></span>
