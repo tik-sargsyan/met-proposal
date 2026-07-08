@@ -98,7 +98,7 @@
   .hero-sub{max-width:60ch;margin-top:clamp(24px,4vh,38px);font-size:var(--fs-lead);color:var(--body)}
   .anim .hero-sub{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) .45s,transform .8s var(--ease) .45s}
   .revealed .hero-sub{opacity:1;transform:none}
-  .hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:clamp(28px,5vh,46px)}
+  .hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:clamp(28px,5vh,46px)}
   .anim .hero-meta{opacity:0;transition:opacity .8s var(--ease) .65s}
   .revealed .hero-meta{opacity:1}
   .hero-meta span{font-size:.85rem;font-weight:600;color:var(--muted)}
@@ -196,7 +196,7 @@
   .invest .r .rd{color:var(--body);font-size:.92rem;margin-top:4px;max-width:56ch}
   .invest .r .rp{font-family:"Anton";color:var(--wine);font-size:clamp(1.4rem,2.6vw,2rem);white-space:nowrap;text-align:right}
   .invest .r .rp.is-text{font-family:"Gantari";font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem)}
-  .invest-note{margin-top:24px;font-weight:700;color:var(--wine);font-size:1rem;max-width:60ch}
+  .lead .results-hl{display:block;margin-top:.55em;color:var(--wine);font-weight:800;font-size:1.16em;letter-spacing:-.01em}
 
   .contact h2{font-size:clamp(2rem,6vw,4.6rem)}
   .contact .lead{margin-top:18px}
@@ -431,14 +431,13 @@
   <div class="sec-head">
     <span class="eyebrow reveal">Investment</span>
     <h2 class="display reveal">Simple and staged.</h2>
-    <p class="lead reveal">Priced for the local market, in Armenian dram, and a starting point, not a fixed menu. Lighter milestones like a report cost less; bigger builds like the full dashboard cost more. Every scope and price is finalized and negotiated together. Results are what matter.</p>
+    <p class="lead reveal">Priced for the local market, in Armenian dram, and a starting point, not a fixed menu. Lighter milestones like a report cost less; bigger builds like the full dashboard cost more. Every scope and price is finalized and negotiated together.<span class="results-hl">Business results are what matter.</span></p>
   </div>
   <div class="rows reveal">
     <div class="r"><div><div class="rt">Kick Off</div><div class="rd">Workspace setup, team training, and the audit.</div></div><div class="rp">900,000 <span class="dram">֏</span></div></div>
     <div class="r"><div><div class="rt">Milestones</div><div class="rd">From a light report to the full dashboard. Typically 500K to 1.5M <span class="dram">֏</span>, finalized with you by exact scope, and you can stop between milestones.</div></div><div class="rp">500K-1.5M <span class="dram">֏</span></div></div>
     <div class="r"><div><div class="rt">Retainer</div><div class="rd">Weekly Friday session, upkeep, and new milestones on request.</div></div><div class="rp">400,000 <span class="dram">֏</span>/mo</div></div>
   </div>
-  <p class="invest-note reveal">All scopes and prices are finalized and negotiated together, and flex with the exact scope. The results are what matter.</p>
 </section>
 
 <!-- CONTACT -->
