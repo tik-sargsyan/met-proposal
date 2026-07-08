@@ -202,9 +202,16 @@
   .contact .lead{margin-top:18px}
   .contact .card{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:1.02rem}
   .contact .card b{color:var(--ink)}.contact .card a{color:var(--wine);text-decoration:none}
-  .contact .dl{margin-top:16px}
-  .contact .dl a{color:var(--wine);font-weight:700;font-size:.95rem;text-decoration:none;border-bottom:1px solid var(--wine);padding-bottom:2px}
-  .contact .dl a:hover{color:var(--wine-deep);border-color:var(--wine-deep)}
+  .proof-report{padding-top:6px}
+  .report-card{display:grid;grid-template-columns:1fr 1.05fr;border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;background:#fff}
+  .report-card .report-thumb{display:block;background:var(--surface-2);border-right:1px solid var(--line)}
+  .report-card .report-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .report-card .report-body{padding:clamp(24px,3.5vw,40px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+  .report-card .report-body h2{font-size:var(--fs-h3);margin:10px 0 12px}
+  .report-card .report-body p{color:var(--body);max-width:46ch}
+  .report-dl{margin-top:20px;display:inline-block;background:var(--wine);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;padding:.72em 1.3em;border-radius:9px;transition:background .2s}
+  .report-dl:hover{background:var(--wine-deep)}
+  @media(max-width:720px){.report-card{grid-template-columns:1fr}.report-card .report-thumb{border-right:none;border-bottom:1px solid var(--line)}}
   .contact .fine{margin-top:26px;font-size:.88rem;color:var(--muted)}
   footer{border-top:1px solid var(--line);padding-block:36px;color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
   footer .brand{font-size:1rem}
@@ -314,6 +321,20 @@
     <div class="shot" data-cap="Cinematic sportswear"><img src="assets/creatives/07-sportswear.jpg" alt="White sneakers on wet pavement, cinematic sportswear" loading="lazy"></div>
   </div>
   <p class="gallery-note reveal"><b>The on-brand starting point, in minutes.</b> Your team owns the finish: crop, retouch, type, taste. These are raw first drafts, not final client work.</p>
+</section>
+
+<!-- LIVE REPORT PROOF -->
+<section class="wrap proof-report" id="report">
+  <div class="report-card reveal">
+    <a class="report-thumb" href="assets/weekly-report-real.pdf" target="_blank" rel="noopener" aria-label="Open the live Instagram report PDF">
+      <img src="assets/report-thumb.png" alt="One-page Instagram performance report built from MET Agency's live data" loading="lazy">
+    </a>
+    <div class="report-body">
+      <h2 class="display">A real report, from your live data.</h2>
+      <p>We pulled @met_agency_'s live Instagram data and generated this one-page report automatically. Public metrics today. Reach, saves and the paid split get added the moment you connect Meta.</p>
+      <a class="report-dl" href="assets/weekly-report-real.pdf" target="_blank" rel="noopener">Download the report (PDF)</a>
+    </div>
+  </div>
 </section>
 
 <!-- 3-PHASE ROADMAP -->
@@ -443,8 +464,7 @@
 <!-- CONTACT -->
 <section class="wrap contact" id="contact">
   <h2 class="display reveal">Let's build it <span style="color:var(--wine)">together.</span></h2>
-  <p class="lead reveal">A short call to green-light the Kick Off. This page is one example of what we build. I can also show on-brand creative in minutes and a one-page weekly Instagram report built from live data.</p>
-  <p class="dl reveal"><a href="assets/weekly-report-sample.pdf" target="_blank" rel="noopener">Download a sample weekly report (PDF)</a></p>
+  <p class="lead reveal">A short call to green-light the Kick Off. This page, the on-brand creatives, and the live report above are all examples of what we build.</p>
   <div class="card reveal">
     <span><b>Tigran Sargsyan</b></span>
     <span><a href="mailto:i.am.tigran.sargsyan@gmail.com">i.am.tigran.sargsyan@gmail.com</a></span>
