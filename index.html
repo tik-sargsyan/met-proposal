@@ -198,6 +198,12 @@
   .invest .r .rp.is-text{font-family:"Gantari";font-weight:800;font-size:clamp(1.05rem,1.6vw,1.3rem)}
   .lead .results-hl{display:block;margin-top:.55em;color:var(--wine);font-weight:800;font-size:1.16em;letter-spacing:-.01em}
   .ownership{padding-top:6px}
+  .own-card{border:1px solid var(--line-strong);border-radius:16px;padding:clamp(24px,3.5vw,40px);background:var(--surface-2)}
+  .own-card h2{font-size:var(--fs-h3)}
+  .own-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 36px;margin-top:24px}
+  .own-pt b{display:block;color:var(--ink);font-size:1rem;margin-bottom:4px}
+  .own-pt span{color:var(--muted);font-size:.9rem;line-height:1.45}
+  @media(max-width:640px){.own-grid{grid-template-columns:1fr}}
   .quickwin{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1.5px solid var(--wine);background:var(--wine-tint);border-radius:16px;padding:clamp(20px,3vw,30px);margin-bottom:22px}
   .quickwin .qw-body{max-width:62ch}
   .quickwin .qw-lead{font-weight:800;color:var(--wine);font-size:.9rem;margin-bottom:6px}
@@ -466,9 +472,14 @@
 
 <!-- OWNERSHIP -->
 <section class="wrap ownership">
-  <div class="sec-head">
-    <h2 class="display reveal">Your data. Your accounts. No lock-in.</h2>
-    <p class="lead reveal">Everything runs in MET's name: your GitHub, your API keys, your Meta Business Manager. Client data stays in your accounts. We sign an NDA before the audit. On exit you keep the source, the docs and the credentials, and my access is removed. No lock-in is a term, not a slogan.</p>
+  <div class="own-card reveal">
+    <h2 class="display">Your data. Your accounts. No lock-in.</h2>
+    <div class="own-grid">
+      <div class="own-pt"><b>Everything in MET's name</b><span>Your GitHub, your API keys, your Meta Business Manager.</span></div>
+      <div class="own-pt"><b>Client data stays with you</b><span>It lives in your accounts. It never moves to mine.</span></div>
+      <div class="own-pt"><b>NDA before the audit</b><span>Signed before we look at anything.</span></div>
+      <div class="own-pt"><b>Yours on exit</b><span>Keep the source, the docs and the credentials. My access is removed.</span></div>
+    </div>
   </div>
 </section>
 
