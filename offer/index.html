@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MET × Tigran · Final Offer</title>
+<meta name="description" content="Final offer for MET Agency: everything you asked for, tested and possible. Kick Off, milestones, and maintenance." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Gantari:wght@300;400;500;600;700;800&family=Noto+Sans+Armenian:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#651027;--wine-deep:#45060e;--wine-on-dark:#e8617f;--ink:#161011;--body:#453c3e;--muted:#615858;
+    --surface:#ffffff;--surface-2:#f8f8f8;--surface-3:#ededed;--line:#e7e0dc;--line-strong:#d6cbc6;--wine-tint:#f7ecef;
+    --dark-body:#cabec0;--dark-muted:#c3b8ba;--maxw:1220px;--gutter:clamp(20px,5vw,72px);--ease:cubic-bezier(.23,1,.32,1);
+    --fs-display:clamp(2.4rem,6.4vw,5.6rem);--fs-h2:clamp(1.8rem,4.2vw,3.4rem);--fs-h3:clamp(1.2rem,2vw,1.6rem);
+    --fs-lead:clamp(1.1rem,1.6vw,1.42rem);--fs-body:clamp(1rem,1.1vw,1.1rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Gantari",system-ui,sans-serif;color:var(--body);background:var(--surface);font-size:var(--fs-body);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  body.locked{overflow:hidden;height:100vh}
+  h2,h3,h4{color:var(--ink);line-height:1.03;text-wrap:balance}
+  h1{color:var(--ink);line-height:1.03}
+  p{text-wrap:pretty}
+  ::selection{background:var(--wine);color:#fff}
+  :focus-visible{outline:none;box-shadow:0 0 0 3px var(--wine-tint),0 0 0 5px var(--wine)}
+  .display{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:.005em}
+  .dram{font-family:"Noto Sans Armenian","Anton",sans-serif;font-weight:800;font-size:.8em;margin-left:.05em}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+  .eyebrow{font-family:"Gantari";font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);display:inline-flex;align-items:center;gap:.6em}
+  .eyebrow::before{content:"";width:24px;height:2px;background:currentColor}
+
+  #gate{position:fixed;inset:0;z-index:1000;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;padding:24px}
+  #gate .box{width:100%;max-width:380px}
+  #gate .mk{font-family:"Anton";font-size:2rem;letter-spacing:.02em}
+  #gate .mk .x{color:var(--wine-on-dark);font-family:"Gantari";font-weight:300}
+  #gate .sub{color:var(--dark-muted);font-size:.9rem;margin:6px 0 28px}
+  #gate label{display:block;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dark-muted);margin:14px 0 6px}
+  #gate input{width:100%;padding:.8em 1em;border:1px solid #3a2b2d;background:#1e1516;color:#fff;border-radius:8px;font-size:1rem;font-family:inherit}
+  #gate input:focus{outline:none;border-color:var(--wine-on-dark)}
+  #gate button{margin-top:22px;width:100%;padding:.9em;background:var(--wine-on-dark);color:var(--ink);border:none;border-radius:8px;font-weight:800;font-size:1rem;cursor:pointer;transition:transform .15s var(--ease),filter .15s var(--ease)}
+  #gate button:hover{filter:brightness(1.06)}#gate button:active{transform:scale(.98)}
+  #gate .err{display:none;color:var(--wine-on-dark);font-size:.86rem;margin-top:14px}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--wine);z-index:100}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:16px var(--gutter);transition:background .4s var(--ease),box-shadow .4s var(--ease)}
+  header.nav.scrolled{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  .brand{font-family:"Anton";font-size:1.3rem;color:var(--ink);letter-spacing:.02em;display:flex;align-items:center;gap:.5rem}
+  .brand .x{color:var(--wine);font-family:"Gantari";font-weight:300;font-size:1.05rem}
+  .nav-label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.03em}
+  @media(max-width:560px){.nav-label{display:none}}
+
+  .hero{position:relative;min-height:96svh;display:flex;flex-direction:column;justify-content:center;padding-block:120px 60px;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 90% 6%,var(--wine-tint) 0%,transparent 44%);z-index:-1}
+  .hero h1{font-size:var(--fs-display);color:var(--ink);letter-spacing:-.01em}
+  .hero h1 .accent{color:var(--wine);display:inline}
+  .hero .line{display:block;overflow:hidden}
+  .hero .line > span{display:block;transition:transform .9s var(--ease)}
+  .hero .line:nth-child(1) > span,.hero .line:nth-child(2) > span{white-space:nowrap}
+  .hero-tag{font-family:"Gantari";font-weight:800;font-size:clamp(1.15rem,2.1vw,1.7rem);color:var(--wine);margin-top:clamp(18px,3vh,28px);letter-spacing:-.01em}
+  .anim .hero-tag{opacity:0;transform:translateY(12px);transition:opacity .8s var(--ease) .38s,transform .8s var(--ease) .38s}
+  .revealed .hero-tag{opacity:1;transform:none}
+  .anim .hero .line span{transform:translateY(106%)}
+  .anim .hero .line:nth-child(2) span{transition-delay:.07s}
+  .anim .hero .line:nth-child(3) span{transition-delay:.14s}
+  .revealed .hero .line span{transform:translateY(0)}
+  .hero-sub{max-width:64ch;margin-top:clamp(24px,4vh,38px);font-size:var(--fs-lead);color:var(--body)}
+  .anim .hero-sub{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) .45s,transform .8s var(--ease) .45s}
+  .revealed .hero-sub{opacity:1;transform:none}
+  .hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:clamp(28px,5vh,46px)}
+  .anim .hero-meta{opacity:0;transition:opacity .8s var(--ease) .65s}
+  .revealed .hero-meta{opacity:1}
+  .hero-meta span{font-size:.85rem;font-weight:600;color:var(--muted)}
+  .hero-meta b{color:var(--ink)}
+  .hero-meta .pill{color:var(--wine);border:1.5px solid var(--line-strong);border-radius:8px;padding:.35em .8em}
+
+  section{padding-block:clamp(72px,11vh,150px)}
+  .sec-head{max-width:62ch;margin-bottom:clamp(38px,6vh,68px)}
+  .sec-head h2{font-size:var(--fs-h2);margin-top:clamp(14px,2vh,24px);letter-spacing:-.01em}
+  .sec-head .lead{margin-top:clamp(16px,2.4vh,26px)}
+  .lead{font-size:var(--fs-lead);color:var(--body);max-width:64ch}
+
+  .reveal{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .anim .reveal{opacity:0;transform:translateY(26px)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* proof band (dark) */
+  .proof{background:var(--ink);color:#fff}
+  .proof h2{color:#fff}.proof .eyebrow{color:var(--wine-on-dark)}.proof .lead{color:var(--dark-body)}
+  .proof-grid{display:grid;gap:1px;background:#2a2020;border:1px solid #2a2020;border-radius:16px;overflow:hidden;margin-top:8px;grid-template-columns:1fr}
+  @media(min-width:680px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  .proof-item{background:#1b1314;padding:clamp(20px,2.4vw,30px)}
+  .proof-item .pt{font-family:"Anton";color:var(--wine-on-dark);font-size:1.2rem;letter-spacing:.01em}
+  .proof-item .pd{color:var(--dark-body);font-size:.92rem;margin-top:8px}
+  .split{display:grid;gap:16px;grid-template-columns:1fr;margin-top:44px}
+  @media(min-width:820px){.split{grid-template-columns:1fr 1fr}}
+  .split-card{border:1px solid #2a2020;border-radius:14px;padding:clamp(22px,2.6vw,30px);background:#1b1314}
+  .split-card h3{color:#fff;font-size:1.1rem;margin-bottom:14px}
+  .split-card.now{border-color:var(--wine-on-dark)}
+  .split-card ul{list-style:none;display:grid;gap:9px}
+  .split-card li{position:relative;padding-left:22px;color:var(--dark-body);font-size:.94rem}
+  .split-card li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--wine-on-dark);border-radius:2px;transform:rotate(45deg)}
+
+  /* roadmap */
+  .phases-intro{padding-block:clamp(56px,8vh,96px)}
+  .roadmap{display:grid;gap:14px;grid-template-columns:1fr;align-items:stretch;margin-top:8px}
+  @media(min-width:820px){.roadmap{grid-template-columns:1fr auto 1fr auto 1fr}}
+  .rm{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,2.6vw,30px)}
+  .rm .rmn{font-family:"Anton";font-size:2.2rem;color:var(--wine);line-height:.9}
+  .rm h3{font-size:1.2rem;margin:10px 0 6px}
+  .rm p{font-size:.94rem;color:var(--body)}
+  .rmarrow{display:flex;align-items:center;justify-content:center;color:var(--line-strong);font-size:1.5rem}
+  @media(max-width:819px){.rmarrow{display:none}}
+
+  .kick{background:var(--surface-2)}
+  .kick-grid{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:820px){.kick-grid{grid-template-columns:repeat(3,1fr)}}
+  .kick-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(24px,3vw,34px)}
+  .kick-card .kn{font-family:"Anton";color:var(--wine);font-size:1rem;letter-spacing:.04em}
+  .kick-card h3{font-size:1.25rem;margin:10px 0 10px}.kick-card p{font-size:.96rem;color:var(--body)}
+  .kick-outcome{margin-top:26px;font-size:1rem;color:var(--body);max-width:70ch}.kick-outcome b{color:var(--wine)}
+  .kick-price{margin-top:20px;font-family:"Anton";color:var(--ink);font-size:clamp(1.6rem,3vw,2.2rem)}
+  .kick-price small{font-family:"Gantari";font-weight:600;font-size:.8rem;color:var(--muted);letter-spacing:.02em;margin-left:8px}
+  .was{color:var(--muted);text-decoration:line-through;font-family:"Gantari";font-weight:600;font-size:.6em}
+
+  .miles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;grid-template-columns:1fr}
+  @media(min-width:720px){.miles{grid-template-columns:1fr 1fr}}
+  .mile{background:var(--surface);padding:clamp(24px,2.6vw,34px);transition:background .3s var(--ease);display:flex;flex-direction:column}
+  .mile:hover{background:var(--surface-2)}
+  .mile .mn{font-family:"Anton";font-size:1.6rem;color:var(--wine)}
+  .mile h3{font-size:1.18rem;margin:8px 0 8px}.mile p{font-size:.94rem;color:var(--body)}
+  .mile .out{margin-top:auto;padding-top:14px;font-size:.86rem;color:var(--wine);font-weight:600}
+  .miles-price{margin-top:24px;font-family:"Anton";color:var(--ink);font-size:clamp(1.5rem,2.8vw,2.1rem)}
+  .miles-price small{font-family:"Gantari";font-weight:600;font-size:.82rem;color:var(--muted);margin-left:10px}
+  .miles-more{margin-top:18px;font-size:.98rem;color:var(--body);max-width:70ch}.miles-more b{color:var(--wine)}
+
+  /* how it works / setup */
+  .model{list-style:none;display:grid;gap:12px;margin-top:8px;max-width:74ch}
+  .model li{position:relative;padding-left:22px;font-size:1rem;color:var(--body)}
+  .model li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--wine);border-radius:2px;transform:rotate(45deg)}
+  .model li b{color:var(--ink)}
+  .setup-grid{display:grid;gap:16px;grid-template-columns:1fr;margin-top:34px}
+  @media(min-width:820px){.setup-grid{grid-template-columns:repeat(2,1fr)}}
+  .setup-card{border:1px solid var(--line);border-radius:14px;padding:clamp(22px,2.6vw,28px);background:var(--surface-2)}
+  .setup-card h3{font-size:1.1rem;margin-bottom:8px}
+  .setup-card p{font-size:.94rem;color:var(--body)}
+  .setup-card .pr{margin-top:12px;font-weight:800;color:var(--wine);font-size:.9rem}
+  .runcost{margin-top:24px;font-size:.98rem;color:var(--body);max-width:74ch}.runcost b{color:var(--ink)}
+
+  /* retainer */
+  .band-2{display:grid;gap:clamp(28px,4vw,60px);grid-template-columns:1fr}
+  @media(min-width:900px){.band-2{grid-template-columns:1fr 1fr}}
+  .listy{list-style:none;display:grid;gap:12px;margin-top:8px}
+  .listy li{position:relative;padding-left:22px;font-size:1rem;color:var(--body)}
+  .listy li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--wine);border-radius:2px;transform:rotate(45deg)}
+  .listy li b{color:var(--ink)}
+  .retainer{background:var(--ink);color:#fff}
+  .retainer .band-2{align-items:center}
+  .retainer h2{color:#fff}.retainer .eyebrow{color:var(--wine-on-dark)}
+  .retainer .listy li{color:var(--dark-body)}.retainer .listy li b{color:#fff}.retainer .listy li::before{background:var(--wine-on-dark)}
+  .retainer .price{font-family:"Anton";color:var(--wine-on-dark);font-size:clamp(2.2rem,5vw,3.4rem);line-height:.9;text-align:right}
+  .retainer .price small{display:block;font-family:"Gantari";font-weight:600;font-size:.82rem;color:var(--dark-muted);margin-top:8px}
+  @media(max-width:900px){.retainer .price{text-align:left}}
+
+  .ownership{padding-top:6px}
+  .own-card{border:1px solid var(--line-strong);border-radius:16px;padding:clamp(24px,3.5vw,40px);background:var(--surface-2)}
+  .own-card h2{font-size:var(--fs-h3)}
+  .own-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 36px;margin-top:24px}
+  .own-pt b{display:block;color:var(--ink);font-size:1rem;margin-bottom:4px}
+  .own-pt span{color:var(--muted);font-size:.9rem;line-height:1.45}
+  @media(max-width:640px){.own-grid{grid-template-columns:1fr}}
+
+  .contact h2{font-size:clamp(2rem,6vw,4.6rem)}
+  .contact .lead{margin-top:18px}
+  .contact .card{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px 30px;font-size:1.02rem}
+  .contact .card b{color:var(--ink)}.contact .card a{color:var(--wine);text-decoration:none}
+  .contact .fine{margin-top:26px;font-size:.88rem;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding-block:36px;color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer .brand{font-size:1rem}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .anim .reveal,.anim .hero .line span,.anim .hero-sub,.anim .hero-meta,.anim .hero-tag{opacity:1!important;transform:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #gate,.progress,header.nav{display:none!important}
+    body.locked{overflow:visible;height:auto}
+    body{font-size:11pt;line-height:1.5}
+    section{padding-block:26px!important}
+    .hero{min-height:auto!important;padding-block:8px 20px!important}
+    .reveal{opacity:1!important;transform:none!important}
+    .hero .line span,.hero-sub,.hero-meta,.hero-tag{transform:none!important;opacity:1!important}
+    .proof,.retainer{background:#fff!important;color:var(--ink)!important}
+    .proof h2,.retainer h2{color:var(--ink)!important}
+    .proof .lead,.retainer .listy li,.proof-item .pd,.split-card li{color:var(--body)!important}
+    .proof .eyebrow,.retainer .eyebrow,.proof-item .pt,.retainer .price,.retainer .price small,.split-card h3{color:var(--wine)!important}
+    .proof-grid,.proof-item,.split-card{background:#fff!important;border-color:var(--line)!important}
+    .mile,.kick-card,.setup-card,.rm,.own-pt{break-inside:avoid}
+  }
+</style>
+</head>
+<body class="locked">
+
+<div id="gate">
+  <form class="box" id="gateForm" autocomplete="off">
+    <div class="mk">MET <span class="x">×</span> Tigran</div>
+    <div class="sub">Private offer. Please enter your access details.</div>
+    <label for="gu">Username</label>
+    <input id="gu" type="text" autocapitalize="off" spellcheck="false" />
+    <label for="gp">Password</label>
+    <input id="gp" type="password" />
+    <button type="submit">Enter</button>
+    <div class="err" id="gerr">Incorrect username or password.</div>
+  </form>
+</div>
+
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav">
+  <div class="brand">MET <span class="x">×</span> Tigran</div>
+  <span class="nav-label">Final Offer · Yerevan · 2026</span>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap" id="top">
+  <h1 class="display">
+    <span class="line"><span>Everything you</span></span>
+    <span class="line"><span>asked for.</span></span>
+    <span class="line"><span><span class="accent">Tested</span>, and possible.</span></span>
+  </h1>
+  <p class="hero-tag">I tested the tools, not just the theory.</p>
+  <p class="hero-sub">After a full research and testing pass, this is the offer. The heavy needle-movers, performance tracking, scheduling and publishing across your socials, and the research, strategy and content agents, all have proven tools, connected and working. The few sources without an AI-ready API, like Google Business and TripAdvisor, we automate another way, so it is still far easier than doing it by hand.</p>
+  <div class="hero-meta">
+    <span class="pill">Kick Off · 4 milestones · Maintenance</span>
+    <span><b>Tools tested</b> and working</span>
+    <span>Built inside <b>Picsart</b>, 150M-MAU</span>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Feasibility, confirmed</span>
+      <h2 class="display reveal">Tested, not promised.</h2>
+      <p class="lead reveal">I did not guess at what is possible. I set up and ran the real tools on live accounts, so we start from proof, not hope.</p>
+    </div>
+    <div class="proof-grid reveal">
+      <div class="proof-item"><div class="pt">14+ platforms, one tool</div><div class="pd">Publish, schedule, DM and pull analytics across your socials from one place. Tested live (Zernio).</div></div>
+      <div class="proof-item"><div class="pt">Meta &amp; Google ads</div><div class="pd">Campaign management and reporting, verified working through the official APIs and CLI.</div></div>
+      <div class="proof-item"><div class="pt">Research &amp; strategy agents</div><div class="pd">Market, competitor, positioning and campaign-concept agents, running today.</div></div>
+      <div class="proof-item"><div class="pt">Competitor &amp; local data</div><div class="pd">Scraping for what the ad APIs will not hand over, and for local Armenian sources. Tested.</div></div>
+    </div>
+    <div class="split reveal">
+      <div class="split-card now">
+        <h3>Working from day one</h3>
+        <ul>
+          <li>Research and strategy agents</li>
+          <li>SMM planning and intelligence</li>
+          <li>Performance tracking and reporting</li>
+          <li>Scheduling and publishing across socials</li>
+          <li>DM and comment handling</li>
+          <li>Ad reporting, and competitor monitoring</li>
+        </ul>
+      </div>
+      <div class="split-card">
+        <h3>Unlocks over a few weeks</h3>
+        <ul>
+          <li>Google Business Profile insights and reviews (Google approval)</li>
+          <li>Ad management on each client account (Business Manager access)</li>
+          <li>Anything needing platform verification</li>
+        </ul>
+        <p style="color:var(--dark-muted);font-size:.9rem;margin-top:14px">We start these approvals on day one and connect them as they clear, while everything on the left already runs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="wrap phases-intro">
+  <div class="sec-head">
+    <h2 class="display reveal">Kick Off, milestones, then a light monthly.</h2>
+  </div>
+  <div class="roadmap reveal">
+    <div class="rm"><div class="rmn">1</div><h3>Kick Off</h3><p>Sessions, the audit, and full setup with your accounts connected.</p></div>
+    <div class="rmarrow">→</div>
+    <div class="rm"><div class="rmn">2</div><h3>Milestones</h3><p>Four builds, in your priority order, one at a time.</p></div>
+    <div class="rmarrow">→</div>
+    <div class="rm"><div class="rmn">3</div><h3>Maintenance</h3><p>AI-strategy time and the technical upkeep you should not own.</p></div>
+  </div>
+</section>
+
+<!-- KICK OFF -->
+<section class="kick">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Phase 1 · Kick Off</span>
+      <h2 class="display reveal">Set the team up. Lock the plan.</h2>
+    </div>
+    <div class="kick-grid">
+      <div class="kick-card reveal"><span class="kn">01</span><h3>Hands-on sessions</h3><p>4 to 6 working sessions with your team on your real work: how the tools and agents run, and how to change them yourself by prompting.</p></div>
+      <div class="kick-card reveal"><span class="kn">02</span><h3>Audit, in progress</h3><p>Already underway: your priorities, scopes, deliverables, and who does what. It locks the milestone order and the first build.</p></div>
+      <div class="kick-card reveal"><span class="kn">03</span><h3>Full setup and connections</h3><p>Claude Code, Zernio, Meta, Google, GitHub, all in MET's name, with your important accounts connected and ready.</p></div>
+    </div>
+    <p class="kick-outcome reveal"><b>You finish Kick Off with</b> the team trained, every tool live and in MET's name, your accounts connected, and a locked plan for the milestones.</p>
+    <div class="kick-price reveal">800,000 <span class="dram">֏</span> <span class="was">900,000</span><small>one-time</small></div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="wrap" id="milestones">
+  <div class="sec-head">
+    <span class="eyebrow reveal">Phase 2 · Milestones</span>
+    <h2 class="display reveal">Four milestones, in your priority order.</h2>
+    <p class="lead reveal">Each is one of the areas you defined. We finalize the exact scope, deliverables and owners together before we build it.</p>
+  </div>
+  <div class="miles reveal">
+    <div class="mile"><div class="mn">01</div><h3>Platform integrations &amp; automation</h3><p>Performance tracking, scheduling and publishing across your socials, plus automatic reporting per client and per channel.</p><div class="out">Kills manual reporting and posting. The biggest time back.</div></div>
+    <div class="mile"><div class="mn">02</div><h3>Research &amp; Strategy agents</h3><p>Market analysis, competitor research, positioning, strategy and campaign concepts, on demand, for one-off projects and full-service clients.</p><div class="out">Senior-level research and strategy, in minutes.</div></div>
+    <div class="mile"><div class="mn">03</div><h3>SMM planning &amp; intelligence</h3><p>Content plans, on-brand captions in Armenian, Russian and English, trend discovery, and local and international competitor watch.</p><div class="out">A full content engine your team directs.</div></div>
+    <div class="mile"><div class="mn">04</div><h3>Advertising automation</h3><p>Meta, Google, YouTube and TikTok: campaign setup, monitoring and reporting. Spend stays human-approved on purpose.</p><div class="out">Faster campaigns, and no manual reporting.</div></div>
+  </div>
+  <div class="miles-price reveal">500,000 <span class="dram">֏</span> each<small>about 2 to 3 weeks each · scope finalized together before we start</small></div>
+  <p class="miles-more reveal"><b>Everything beyond these four</b>, chatbots and lead flows, landing pages, surveys, an internal knowledge base, and more, are future possibilities we scope together once these are running.</p>
+</section>
+
+<!-- HOW IT WORKS / SETUP -->
+<section class="kick">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="display reveal">How we build, and what you set up.</h2>
+    </div>
+    <ul class="model reveal">
+      <li><b>I build the first version</b> of each milestone with your team.</li>
+      <li><b>Your 1 to 3 people co-build,</b> then own it and change it themselves by prompting, no engineering.</li>
+      <li><b>I handle the deep technical upkeep</b> (APIs, tokens, platform changes) under the monthly.</li>
+      <li><b>Everything lives in your GitHub:</b> a private MET repo you own, where I work as a collaborator. My reusable library stays mine; I port what you need into yours.</li>
+    </ul>
+    <div class="setup-grid reveal">
+      <div class="setup-card"><h3>Claude Code</h3><p>Start with one Claude Pro seat for building, plus free personal API keys for the others. Move to Claude Team when you want central billing and roles. No shared logins.</p><div class="pr">~$20/mo to start · ~$125/mo Team later</div></div>
+      <div class="setup-card"><h3>Zernio</h3><p>One MET account. Connect your and your clients' socials once. Publish, schedule, DM and report across 14+ platforms from one place.</p><div class="pr">~$90 to 120/mo for 30 to 40 connected accounts</div></div>
+      <div class="setup-card"><h3>Meta (ads + reporting)</h3><p>A Meta app and business verification, then per-client access via Business Manager. Manage and report on ads through the official tooling. Reporting works first; ad management as access clears.</p><div class="pr">API free · you pay only ad spend</div></div>
+      <div class="setup-card"><h3>Google, GitHub, APIs</h3><p>Google Ads via the API we already use, a MET GitHub organization, and Claude and Gemini API keys for the agents. All created in MET's name.</p><div class="pr">GitHub free · APIs usage-based ~$50 to 200/mo</div></div>
+    </div>
+    <p class="runcost reveal"><b>All in, expect roughly $300 to $500 a month in tools,</b> all in MET's name. Platform APIs are free; you pay only for ad spend and usage.</p>
+  </div>
+</section>
+
+<!-- MAINTENANCE -->
+<section class="retainer">
+  <div class="wrap band-2">
+    <div>
+      <span class="eyebrow reveal">Phase 3 · Maintenance</span>
+      <h2 class="display reveal" style="margin-top:16px">Your AI strategy seat, and the upkeep you should not own.</h2>
+      <ul class="listy reveal" style="margin-top:24px">
+        <li><b>An AI-strategy session, flexible bi-weekly to monthly:</b> what changed in models and tools, which shifts monthly, and how to use it. A seat most agencies cannot hire for.</li>
+        <li><b>Technical maintenance:</b> APIs, tokens and platform rules change constantly. I keep every system running through those changes, the deep upkeep your team should not have to carry.</li>
+        <li><b>First look at every new capability,</b> and new milestones on request.</li>
+        <li><b>Most day-to-day changes you make yourselves,</b> just by prompting. This monthly is for the strategy and the technical depth.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="price">from 300,000 <span class="dram">֏</span><small>was 400,000 · flexible cadence · heavier months scoped higher</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- OWNERSHIP -->
+<section class="wrap ownership">
+  <div class="own-card reveal">
+    <h2 class="display">Your data. Your accounts. No lock-in.</h2>
+    <div class="own-grid">
+      <div class="own-pt"><b>Everything in MET's name</b><span>Your GitHub, your API keys, your Zernio and Meta accounts.</span></div>
+      <div class="own-pt"><b>Client data stays with you</b><span>It lives in your accounts. It never moves to mine.</span></div>
+      <div class="own-pt"><b>NDA before the audit</b><span>Signed before we look at anything.</span></div>
+      <div class="own-pt"><b>Yours on exit</b><span>Keep the source, the docs and the credentials. My access is removed.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="wrap contact" id="contact">
+  <h2 class="display reveal">Let's <span style="color:var(--wine)">start.</span></h2>
+  <p class="lead reveal">The audit is already in progress. A short call to green-light the Kick Off and lock the first milestone, and we begin.</p>
+  <div class="card reveal">
+    <span><b>Tigran Sargsyan</b></span>
+    <span><a href="mailto:i.am.tigran.sargsyan@gmail.com">i.am.tigran.sargsyan@gmail.com</a></span>
+    <span>Telegram · <b>+374 43 090290</b></span>
+  </div>
+  <p class="fine reveal">Prepared for MET Agency, Yerevan · 2026.</p>
+</section>
+
+<footer class="wrap">
+  <div class="brand">MET <span class="x">×</span> Tigran</div>
+  <span>Final offer · <span id="yr"></span></span>
+</footer>
+
+<script>
+(function(){
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var body = document.body, yr = document.getElementById('yr');
+  if(yr) yr.textContent = new Date().getFullYear();
+  function init(){
+    if(!rm) body.classList.add('anim');
+    requestAnimationFrame(function(){ body.classList.add('revealed'); });
+    var nav = document.getElementById('nav'), prog = document.getElementById('progress');
+    function onScroll(){
+      var y = window.scrollY || document.documentElement.scrollTop;
+      nav.classList.toggle('scrolled', y > 40);
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.transform = 'scaleX(' + (h>0 ? Math.min(y/h,1) : 0) + ')';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    var revEls = [].slice.call(document.querySelectorAll('.reveal'));
+    if(rm){ revEls.forEach(function(el){el.classList.add('in');}); }
+    else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+      revEls.forEach(function(el){
+        var sibs = el.parentElement ? [].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('reveal');}) : [];
+        var idx = sibs.indexOf(el); if(idx>0) el.style.transitionDelay = Math.min(idx*0.05,0.3)+'s';
+        io.observe(el);
+      });
+      setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 2600);
+    }
+  }
+  var gate = document.getElementById('gate');
+  var bypass = /[?&]open/.test(location.search) || sessionStorage.getItem('met_ok')==='1';
+  if(bypass){ if(gate) gate.remove(); body.classList.remove('locked'); init(); }
+  else {
+    document.getElementById('gateForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var u=(document.getElementById('gu').value||'').trim().toLowerCase();
+      var p=document.getElementById('gp').value||'';
+      if(u==='met-agency' && p==='tigran'){
+        try{ sessionStorage.setItem('met_ok','1'); }catch(_){}
+        gate.remove(); body.classList.remove('locked'); init();
+      } else { document.getElementById('gerr').style.display='block'; }
+    });
+    document.getElementById('gu').focus();
+  }
+})();
+</script>
+</body>
+</html>
