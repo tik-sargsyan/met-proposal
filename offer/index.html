@@ -134,7 +134,15 @@
   .mile .out{margin-top:auto;padding-top:14px;font-size:.86rem;color:var(--wine);font-weight:600}
   .miles-price{margin-top:24px;font-family:"Anton";color:var(--ink);font-size:clamp(1.5rem,2.8vw,2.1rem)}
   .miles-price small{font-family:"Gantari";font-weight:600;font-size:.82rem;color:var(--muted);margin-left:10px}
-  .miles-more{margin-top:18px;font-size:.98rem;color:var(--body);max-width:70ch}.miles-more b{color:var(--wine)}
+  .miles-more{margin-top:18px;font-size:.98rem;color:var(--body);max-width:74ch}.miles-more b{color:var(--wine)}
+  .mile-list{list-style:none;display:grid;gap:7px;margin:12px 0 4px}
+  .mile-list li{position:relative;padding-left:16px;font-size:.88rem;color:var(--body)}
+  .mile-list li::before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;background:var(--wine);border-radius:50%}
+  .mile .mprice{margin-top:16px;font-family:"Anton";color:var(--ink);font-size:1.35rem}
+  .mile .mprice small{font-family:"Gantari";font-weight:600;font-size:.72rem;color:var(--muted);margin-left:8px}
+  .mile.first{background:var(--wine-tint)}.mile.first:hover{background:var(--wine-tint)}
+  .mile .tagfirst{display:inline-block;width:fit-content;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--wine);border-radius:4px;padding:.28em .55em;margin:8px 0 2px}
+  .setup-card .pr a{color:var(--wine);text-decoration:underline}
 
   /* how it works / setup */
   .model{list-style:none;display:grid;gap:12px;margin-top:8px;max-width:74ch}
@@ -302,7 +310,7 @@
     </div>
     <div class="kick-grid">
       <div class="kick-card reveal"><span class="kn">01</span><h3>Hands-on sessions</h3><p>4 to 6 sessions on your real work. Your team learns to run and change the tools by prompting.</p></div>
-      <div class="kick-card reveal"><span class="kn">02</span><h3>Audit, in progress</h3><p>Already underway: priorities, scopes, owners. Locks the milestone order and first build.</p></div>
+      <div class="kick-card reveal"><span class="kn">02</span><h3>Audit &amp; AI context engine</h3><p>Already underway: your priorities, plus your strategy, clients, brand styles and docs captured into Claude Code, one context engine every tool reuses.</p></div>
       <div class="kick-card reveal"><span class="kn">03</span><h3>Setup and connections</h3><p>Claude Code, Zernio, Meta, Google, GitHub, live and in MET's name, accounts connected.</p></div>
     </div>
     <p class="kick-outcome reveal"><b>You finish with</b> the team trained, every tool live in MET's name, accounts connected, and a locked plan.</p>
@@ -318,20 +326,65 @@
     <p class="lead reveal">Each is an area you defined. Scope and owners set together before each build.</p>
   </div>
   <div class="miles reveal">
-    <div class="mile"><div class="mn">01</div><h3>Platform integrations &amp; automation</h3><p>Tracking, scheduling, publishing and reporting across your socials, per client and per channel.</p><div class="out">Kills manual reporting and posting.</div></div>
-    <div class="mile"><div class="mn">02</div><h3>Research &amp; Strategy agents</h3><p>Market, competitor, positioning, strategy and campaign concepts, on demand.</p><div class="out">Senior-level strategy, in minutes.</div></div>
-    <div class="mile"><div class="mn">03</div><h3>SMM planning &amp; intelligence</h3><p>Content plans, captions in Armenian, Russian and English, trends, competitor watch.</p><div class="out">A content engine your team directs.</div></div>
-    <div class="mile"><div class="mn">04</div><h3>Advertising automation</h3><p>Meta, Google, YouTube and TikTok: setup, monitoring, reporting. Spend stays human-approved.</p><div class="out">Faster campaigns, no manual reporting.</div></div>
+    <div class="mile first">
+      <div class="mn">01</div><span class="tagfirst">Start here</span>
+      <h3>Platform integrations &amp; automation</h3>
+      <ul class="mile-list">
+        <li>Publishing and scheduling posts, reels and stories across Facebook, Instagram, TikTok and LinkedIn</li>
+        <li>Automatic performance reports from Meta, TikTok and LinkedIn</li>
+        <li>Google Business, Yandex and TripAdvisor analytics and reviews</li>
+        <li>Asana connected for reporting</li>
+      </ul>
+      <div class="out">Kills manual reporting and posting.</div>
+      <div class="mprice">400,000 <span class="dram">֏</span><small>the first build</small></div>
+    </div>
+    <div class="mile">
+      <div class="mn">02</div>
+      <h3>Research &amp; Strategy agents</h3>
+      <ul class="mile-list">
+        <li>Market analysis for a brand</li>
+        <li>Competitor research, local and international</li>
+        <li>Positioning opportunities</li>
+        <li>Strategy and campaign concepts</li>
+        <li>Research summaries and recommendations</li>
+      </ul>
+      <div class="out">Senior-level strategy, in minutes.</div>
+      <div class="mprice">~500,000 <span class="dram">֏</span></div>
+    </div>
+    <div class="mile">
+      <div class="mn">03</div>
+      <h3>SMM planning &amp; intelligence</h3>
+      <ul class="mile-list">
+        <li>Captions and content plans in Armenian, Russian and English</li>
+        <li>Content ideas and post concepts</li>
+        <li>Trend discovery</li>
+        <li>Local and international competitor watch</li>
+        <li>Timely content opportunities</li>
+      </ul>
+      <div class="out">A content engine your team directs.</div>
+      <div class="mprice">~500,000 <span class="dram">֏</span></div>
+    </div>
+    <div class="mile">
+      <div class="mn">04</div>
+      <h3>Advertising automation</h3>
+      <ul class="mile-list">
+        <li>Meta, TikTok, YouTube and LinkedIn ads</li>
+        <li>Campaign setup and optimization</li>
+        <li>Performance monitoring and suggestions</li>
+        <li>Automatic reporting</li>
+        <li>Spend stays human-approved</li>
+      </ul>
+      <div class="out">Faster campaigns, no manual reporting.</div>
+      <div class="mprice">~500,000 <span class="dram">֏</span></div>
+    </div>
   </div>
-  <div class="miles-price reveal">500,000 <span class="dram">֏</span> each<small>~2 to 3 weeks each · scope set together</small></div>
-  <p class="miles-more reveal"><b>Beyond these four</b>, chatbots, landing pages, surveys, a knowledge base, and more, are future steps we scope once these run.</p>
+  <p class="miles-more reveal"><b>Platform integrations is the first build, 400,000 ֏.</b> The rest are about 500,000 ֏ each, finalized together after Kick Off and the first milestone, when scopes are clear. About 2 to 3 weeks each. Beyond these four, chatbots, landing pages, surveys and a knowledge base are future steps we scope once these run.</p>
 </section>
 
 <!-- HOW IT WORKS / SETUP -->
 <section class="kick">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow reveal">How it works</span>
       <h2 class="display reveal">How we build, and what you set up.</h2>
     </div>
     <ul class="model reveal">
@@ -341,12 +394,12 @@
       <li><b>Everything lives in your GitHub,</b> a private repo you own. My library stays mine; I port what you need in.</li>
     </ul>
     <div class="setup-grid reveal">
-      <div class="setup-card"><h3>Claude Code</h3><p>One Claude Pro seat to build, free API keys for the rest. Move to Team when you scale. No shared logins.</p><div class="pr">~$20/mo to start · ~$125/mo Team later</div></div>
-      <div class="setup-card"><h3>Zernio</h3><p>One account. Connect your clients' socials once, then publish, schedule, DM and report from one place.</p><div class="pr">~$90 to 120/mo for 30 to 40 accounts</div></div>
-      <div class="setup-card"><h3>Meta (ads + reporting)</h3><p>A Meta app and business verification, then per-client access. Reporting first, ad management as access clears.</p><div class="pr">API free · you pay only ad spend</div></div>
-      <div class="setup-card"><h3>Google, GitHub, APIs</h3><p>Google Ads API, a MET GitHub org, and Claude and Gemini keys for the agents. All in MET's name.</p><div class="pr">GitHub free · APIs ~$50 to 200/mo</div></div>
+      <div class="setup-card"><h3>Claude Code</h3><p>One Claude Pro seat to build, free API keys for the rest. Move to Team when you scale. No shared logins.</p><div class="pr">~$20/mo to start · <a href="https://claude.com/pricing" target="_blank" rel="noopener">pricing</a></div></div>
+      <div class="setup-card"><h3>Zernio</h3><p>One account. Connect your clients' socials once, then publish, schedule, DM and report from one place.</p><div class="pr">~$50 to 60/mo for 10 accounts · <a href="https://zernio.com/pricing" target="_blank" rel="noopener">pricing</a></div></div>
+      <div class="setup-card"><h3>Meta (ads + reporting)</h3><p>A Meta app and business verification, then per-client access. Reporting first, ad management as access clears.</p><div class="pr">Free API · <a href="https://developers.facebook.com/docs/marketing-api" target="_blank" rel="noopener">marketing API</a></div></div>
+      <div class="setup-card"><h3>Google, GitHub, APIs</h3><p>Google Ads API, a MET GitHub org, and Claude and Gemini keys for the agents. All in MET's name.</p><div class="pr">Pay-as-you-go · <a href="https://ai.google.dev/pricing" target="_blank" rel="noopener">Gemini</a> · <a href="https://developers.google.com/google-ads/api" target="_blank" rel="noopener">Google Ads</a></div></div>
     </div>
-    <p class="runcost reveal"><b>About $300 to $500 a month in tools,</b> all in MET's name. APIs are free; you pay only ad spend.</p>
+    <p class="runcost reveal"><b>Start around $70 a month:</b> one Claude Pro seat ($20) plus 10 connected Zernio accounts (~$50). It grows as you add accounts and API usage. Everything in MET's name.</p>
   </div>
 </section>
 
@@ -385,7 +438,12 @@
 <!-- CONTACT -->
 <section class="wrap contact" id="contact">
   <h2 class="display reveal">Let's <span style="color:var(--wine)">start.</span></h2>
-  <p class="lead reveal">The audit is already in progress. A short call to green-light Kick Off and lock the first milestone.</p>
+  <p class="lead reveal">The audit is already in progress. A short call to green-light Kick Off, and month one gives you:</p>
+  <ul class="model reveal" style="margin-top:20px">
+    <li><b>4 to 6 AI training sessions</b> with hands-on practice.</li>
+    <li><b>The audit and your AI context engine in Claude Code:</b> company strategy, clients and their strategy, brand styles and docs, built once and reused across every tool.</li>
+    <li><b>Milestone one, live:</b> full platform integration, publishing, scheduling and reporting across your socials. 400,000 <span class="dram">֏</span>.</li>
+  </ul>
   <div class="card reveal">
     <span><b>Tigran Sargsyan</b></span>
     <span><a href="mailto:i.am.tigran.sargsyan@gmail.com">i.am.tigran.sargsyan@gmail.com</a></span>
